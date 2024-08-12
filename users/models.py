@@ -21,5 +21,5 @@ class User(AbstractUser):
         Returns the user's email if available, otherwise their username.
         :return: str
         """
-        return self.email or str(self.username)
+        return str(self.username)
 
