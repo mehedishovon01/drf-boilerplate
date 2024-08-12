@@ -44,9 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Installed Apps
+    # Installed module
     'rest_framework',
     'rest_framework_simplejwt',
+    
+    # Installed Apps
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -119,8 +122,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Pagination allows to control objects per page are returned
+# Any global settings for a REST framework API are kept in a single configuration dictionary here
+# Don't forget to make sure also added `rest_framework` to INSTALLED_APPS
 REST_FRAMEWORK = {
+    # Pagination allows to control objects per page are returned,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DEFAULT_PERMISSION_CLASSES': (
@@ -154,3 +159,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL = 'users.User'

@@ -25,5 +25,6 @@ urlpatterns = [
 
     # Automatic URL routing using API.
     # Additionally, include login URLs for the browsable API.
+    # This is the DRF default login-logout API
     path(f'api/{settings.API_VERSION}/browser/', include('rest_framework.urls', namespace='rest_framework'))
 ]
