@@ -44,11 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Installed module
+    # Third party module
     'rest_framework',
     'rest_framework_simplejwt',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
     
-    # Installed Apps
+    # Custom Apps
     'users',
 ]
 
@@ -63,8 +65,6 @@ MIDDLEWARE = [
 ]
 
 SIMPLE_JWT = {
-    # It will work instead of the default serializer(TokenObtainPairSerializer).
-    #   "TOKEN_OBTAIN_SERIALIZER": "my_app.serializers.MyTokenObtainPairSerializer",
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
     'SLIDING_TOKEN_LIFETIME': timedelta(days=30),
@@ -123,7 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Any global settings for a REST framework API are kept in a single configuration dictionary here
-# Don't forget to make sure also added `rest_framework` to INSTALLED_APPS
 REST_FRAMEWORK = {
     # Pagination allows to control objects per page are returned,
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
@@ -134,9 +133,26 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+SPECTACULAR_SETTINGS = {
+    'SWAGGER_UI_DIST': 'SIDECAR',  # Shorthand to use the sidecar instead
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
+}
+
+
 API_VERSION = 'v1'
+
+# Mail verification
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mehedishovon01@gmail.com'
+EMAIL_HOST_PASSWORD = 'hmldegfsvxrdetzt'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

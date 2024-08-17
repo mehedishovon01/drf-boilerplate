@@ -17,14 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from config import settings
-
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(f'api/{settings.API_VERSION}/user/', include('users.urls')),
 
-    # Automatic URL routing using API.
-    # Additionally, include login URLs for the browsable API.
-    # This is the DRF default login-logout API
-    path(f'api/{settings.API_VERSION}/browser/', include('rest_framework.urls', namespace='rest_framework'))
+    # drf-spectacular is an OpenAPI 3 schema generation library with explicit focus on extensibility, customizability and client generation.
+    # There is explicit support for swagger-codegen, SwaggerUI and Redoc,
+    path(f'api/{settings.API_VERSION}/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path(f'api/{settings.API_VERSION}/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path(f'api/{settings.API_VERSION}/schema/redoc', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]

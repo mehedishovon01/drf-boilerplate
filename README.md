@@ -57,6 +57,15 @@ DRF-Boilerplate
 │   ├── settings.py
 │   ├── urls.py
 │   ├── wsgi.py
+├── users
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serilizers.py
+│   ├── test.py
+│   ├── urls.py
+│   ├── views.py
 ├── .gitignore
 ├── LICENSE
 ├── manage.py
@@ -75,7 +84,7 @@ After that, put the database credentials and mail credentials `(Do not use the d
 
 ### Create database
 
-We have already configured the MySQL in our project.
+The django project is by default working with sqlite.
 
 So, simply apply the migrations:
 
@@ -94,4 +103,4 @@ That’s it! Now you’re project is already run into a development server.
 Just click this link, [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 
-Thanks for reading.# Ankand-Auction
+Thanks for reading. # DRF-Boilerplate
