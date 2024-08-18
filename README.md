@@ -13,6 +13,8 @@ _Also want to cover up this things_
 * Authentication & permission
 * Relationships & hyperlinked APIs
 * Viewsets & router
+* E-mail verification
+* Docker
 
 
 # Project Setup
@@ -82,14 +84,27 @@ Copy .env from .env.example file for put the secret credentials
 After that, put the database credentials and mail credentials `(Do not use the direct Mail Password)`
 
 
+## Docker Development Setup
+Set database name and password in .docker-env file
+
+Build app
+ 
+    docker compose build
+ 
+Run application and services
+ 
+    docker compose up
+ 
+
 ### Create database
 
 The django project is by default working with sqlite.
 
 So, simply apply the migrations:
+ 
+    docker compose run app python manage.py migrate
 
-    python manage.py migrate
-    
+
 Boooooom! Project setup is done.
 
 ### Run this project
@@ -101,6 +116,5 @@ Let's run the development server:
 That’s it! Now you’re project is already run into a development server. 
 
 Just click this link, [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
 
 Thanks for reading. # DRF-Boilerplate
