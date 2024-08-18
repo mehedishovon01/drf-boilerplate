@@ -68,7 +68,10 @@ DRF-Boilerplate
 │   ├── test.py
 │   ├── urls.py
 │   ├── views.py
+├── .env.example
 ├── .gitignore
+├── docker-compose.yml
+├── Dockerfile
 ├── LICENSE
 ├── manage.py
 ├── README.md
@@ -83,6 +86,8 @@ Copy .env from .env.example file for put the secret credentials
 
 After that, put the database credentials and mail credentials `(Do not use the direct Mail Password)`
 
+Boooooom! Project setup is done.
+
 
 ## Docker Development Setup
 Build this app to run in the development server
@@ -92,27 +97,23 @@ Build this app to run in the development server
 Run application and services
  
     docker compose up
- 
 
-### Create database
-
-The django project is by default working with sqlite.
-
-So, simply apply the migrations:
- 
-    docker compose run app python manage.py migrate
-
-
-Boooooom! Project setup is done.
-
-### Run this project
-
-Let's run the development server:
-
-    python manage.py runserver
 
 That’s it! Now you’re project is already run into a development server. 
 
-Just click this link, [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Just click this link, [http://0.0.0.0:8000/admin](http://0.0.0.0:8000/admin)
 
-Thanks for reading. # DRF-Boilerplate
+### API documentations
+
+Open the API documentations(redoc)
+
+Click this link, [http://0.0.0.0:8000/api/v1/schema/redoc](http://0.0.0.0:8000/api/v1/schema/redoc)
+
+### API Endpoints
+
+Open the swagger view for the API Endpoints
+
+Click this link, [http://0.0.0.0:8000/api/v1/schema/swagger-ui/](http://0.0.0.0:8000/api/v1/schema/swagger-ui/)
+
+
+`Thanks for reading. # DRF-Boilerplate`
