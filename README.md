@@ -85,9 +85,7 @@ After that, put the database credentials and mail credentials `(Do not use the d
 
 
 ## Docker Development Setup
-Set database name and password in .docker-env file
-
-Build app
+Build this app to run in the development server
  
     docker compose build
  
