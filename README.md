@@ -103,6 +103,12 @@ That’s it! Now you’re project is already run into a development server.
 
 Just click this link, [http://0.0.0.0:8000/admin](http://0.0.0.0:8000/admin)
 
+## Pull the container from Docker Hub
+If wanted to pull the container from DockerHub can use this command bellow. 
+
+    docker pull mehedishovon01/drf-boilerplate
+
+
 ### API documentations
 
 Open the API documentations(redoc)
