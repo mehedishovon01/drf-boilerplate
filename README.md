@@ -1,12 +1,14 @@
 # DRF-Boilerplate
+
 This is a django rest framework project boilerplate.
 This project is running on django version 5.0.7 and python version 3.12.3
 
-
 # Introduction
+
 The goal of this project is to learn django rest framework professional and everyone can use this project.
 
 _Also want to cover up this things_
+
 * Serialization
 * Request & Response
 * Class based views
@@ -16,7 +18,6 @@ _Also want to cover up this things_
 * E-mail verification
 * Docker
 
-
 # Project Setup
 
 To use this project to your own machine follow this steps
@@ -25,7 +26,9 @@ To use this project to your own machine follow this steps
 
 First of all, clone this repository using this command
 
-    git clone https://github.com/mehedishovon01/drf-boilerplate.git
+```
+git clone https://github.com/mehedishovon01/drf-boilerplate.git
+```
 
 ### Create a virtualenv
 
@@ -33,21 +36,30 @@ Make a virtual environment to your project directory. Let's do this,
 
 If you have already an existing python virtualenv then run this
 
-    virtualenv venv
+```
+virtualenv venv
+```    
 
 Or if virtualenv is not install in you machine then run this
 
-    python -m venv venv
-    
+```
+python -m venv venv
+```    
+
 Activate the virtual environment and verify it
 
-    . venv/bin/activate
+```
+. venv/bin/activate
+```    
 
 ### Install the dependencies
 
-Most of the projects have dependency name like requirements.txt file which specifies the requirements of that project, so let’s install the requirements of it from the file.
+Most of the projects have dependency name like requirements.txt file which specifies the requirements of that project,
+so let’s install the requirements of it from the file.
 
-    pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```    
 
 ### The project layouts
 
@@ -82,44 +94,38 @@ DRF-Boilerplate
 
 Copy .env from .env.example file for put the secret credentials
 
-    cp .env.example .env
+```
+cp .env.example .env
+```    
 
 After that, put the database credentials and mail credentials `(Do not use the direct Mail Password)`
 
 Boooooom! Project setup is done.
 
-
 ## Docker Development Setup
-Build this app to run in the development server
- 
-    docker compose build
- 
-Run application and services
- 
-    docker compose up
 
+Create the `.env` file & do
 
-That’s it! Now you’re project is already run into a development server. 
+```
+docker compose up
+```    
 
-Just click this link, [http://0.0.0.0:8000/admin](http://0.0.0.0:8000/admin)
+Alternately, you can pass them as environment variabes in [docker-compose.yml](./docker-compose.yml) file.
 
-## Pull the container from Docker Hub
-If wanted to pull the container from DockerHub can use this command bellow. 
+That’s it! Now you’re project is already run into a development server.
 
-    docker pull mehedishovon01/drf-boilerplate
-
+Just click this link, [http://localhost:8000/admin](http://localhost:8000/admin)
 
 ### API documentations
 
 Open the API documentations(redoc)
 
-Click this link, [http://0.0.0.0:8000/api/v1/schema/redoc](http://0.0.0.0:8000/api/v1/schema/redoc)
+Click this link, [http://localhost:8000/api/v1/schema/redoc](http://localhost:8000/api/v1/schema/redoc)
 
 ### API Endpoints
 
 Open the swagger view for the API Endpoints
 
-Click this link, [http://0.0.0.0:8000/api/v1/schema/swagger-ui/](http://0.0.0.0:8000/api/v1/schema/swagger-ui/)
-
+Click this link, [http://localhost:8000/api/v1/schema/swagger-ui/](http://localhost:8000/api/v1/schema/swagger-ui/)
 
 `Thanks for reading. # DRF-Boilerplate`
